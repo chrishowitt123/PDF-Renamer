@@ -6,8 +6,8 @@ from nltk import Text
 import pandas as pd
 
 
-pdf_document = "pdf-sample.pdf"
-doc = fitz.open(pdf_document)
+path = "pdf-sample.pdf"
+doc = fitz.open(path)
 print ("number of pages: %i" % doc.pageCount)
 print(doc.metadata)
 
@@ -23,7 +23,9 @@ tokens_list = tokens.split(",")
 
 tokens_list = [t.strip() for t in tokens_list]
 
-Company = tokens_list[6]
-Ent_num = tokens_list[5]
+tokens_list
 
-Company + '_' + Ent_num + '.pdf'
+name1 = tokens_list[6]
+name2 = tokens_list[5]
+
+filename = name1 + '_' + name2 + '.pdf'
