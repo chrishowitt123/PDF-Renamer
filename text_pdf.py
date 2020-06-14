@@ -3,10 +3,11 @@ import nltk
 from nltk.tokenize import word_tokenize
 from nltk.tokenize import sent_tokenize
 from nltk import Text
-import os
+import shutil
 
 
-path = "pdf-sample.pdf"
+
+path = r"pdf-sample.pdf"
 doc = fitz.open(path)
 print ("number of pages: %i" % doc.pageCount)
 print(doc.metadata)
@@ -29,6 +30,10 @@ date_today = datetime.today().strftime('%Y-%m-%d')
 name1 = tokens_list[6]
 name2 = tokens_list[5]
 
-filename = date_today + '_' + name1 + '_' + name2 + '.pdf'
+new_filename = date_today + '_' + name1 + '_' + name2 + '.pdf'
 
-filename
+
+original = path
+target = new_filename
+
+shutil.copyfile(original, target)
