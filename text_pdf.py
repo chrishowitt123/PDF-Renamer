@@ -16,17 +16,12 @@ pagetext = page.getText("text")
 
     
 textList = Text(tokens)
-list(pagetext)
 tokens = sent_tokenize(pagetext)    
 tokens = [t.replace('\n', ', ') for t in tokens]
 tokens = str(tokens)
 tokens_list = tokens.split(",")
 
-tokens_list
 
 
+tokens_list = [t.strip() for t in tokens_list]
 
-
-#Company_name = str(Company_name).replace('\nName:', '').replace('Info     ', '').replace(' 6', '').replace(', ', '')
-#Responsible = str(Responsible).replace('\nName:', '').replace('Info     ', '').replace(' 19', '').replace(', ', '')
-#Company_name + Responsible
