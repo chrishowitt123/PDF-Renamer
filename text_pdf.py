@@ -10,7 +10,7 @@ doc = fitz.open(pdf_document)
 print ("number of pages: %i" % doc.pageCount)
 print(doc.metadata)
 
-page1 = doc.loadPage(1)
+page1 = doc.loadPage(0)
 page1text = page1.getText("text")
 
     
@@ -20,4 +20,6 @@ tokens = sent_tokenize(page1text)
 tokens = [t.replace('\n', ', ') for t in tokens]
 tokens = str(tokens)
 tokens_list = tokens.split(",")
-pd.DataFrame(tokens_list).to_csv('tok.csv')
+items = pd.DataFrame(tokens_list)
+items.columns = ['Info']
+items
