@@ -3,7 +3,7 @@ import nltk
 from nltk.tokenize import word_tokenize
 from nltk.tokenize import sent_tokenize
 from nltk import Text
-import pandas as pd
+import os
 
 
 path = "pdf-sample.pdf"
@@ -25,7 +25,10 @@ tokens_list = [t.strip() for t in tokens_list]
 
 tokens_list
 
+date_today = datetime.today().strftime('%Y-%m-%d')
 name1 = tokens_list[6]
 name2 = tokens_list[5]
 
-filename = name1 + '_' + name2 + '.pdf'
+filename = date_today + '_' + name1 + '_' + name2 + '.pdf'
+
+filename
