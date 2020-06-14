@@ -16,5 +16,8 @@ page1text = page1.getText("text")
     
 textList = Text(tokens)
 list(page1text)
-tokens = sent_tokenize(page1text)  
-df = pd.DataFrame(tokens).to_csv('text.csv')
+tokens = sent_tokenize(page1text)    
+tokens = [t.replace('\n', ', ') for t in tokens]
+tokens = str(tokens)
+tokens_list = tokens.split(",")
+tokens_list
