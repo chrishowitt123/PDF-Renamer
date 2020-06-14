@@ -5,7 +5,9 @@ from nltk.tokenize import sent_tokenize
 from nltk import Text
 import shutil
 
-path = r"pdf-sample.pdf"
+
+
+path = r"Proformas_0406181628.pdf"
 doc = fitz.open(path)
 print ("number of pages: %i" % doc.pageCount)
 print(doc.metadata)
@@ -25,10 +27,14 @@ tokens_list = [t.strip() for t in tokens_list]
 tokens_list
 
 date_today = datetime.today().strftime('%Y-%m-%d')
-name1 = tokens_list[6]
-name2 = tokens_list[5]
 
-new_filename = date_today + '_' + name1 + '_' + name2 + '.pdf'
+#company_name_index = tokens_list.index('Holísticos – Serviços')
+#company_id_index = tokens_list.index('Código')
+
+company_name = tokens_list[82]
+company_id = tokens_list[22]
+
+new_filename = date_today + '_' + company_name + '_' + company_id + '.pdf'
 
 
 original = path
