@@ -22,4 +22,4 @@ tokens = str(tokens)
 tokens_list = tokens.split(",")
 items = pd.DataFrame(tokens_list)
 items.columns = ['Info']
-items
+items.loc[6]
