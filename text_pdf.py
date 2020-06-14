@@ -16,11 +16,13 @@ pagetext = page.getText("text")
 
     
 textList = Text(tokens)
-list(page1text)
-tokens = sent_tokenize(page1text)    
+list(pagetext)
+tokens = sent_tokenize(pagetext)    
 tokens = [t.replace('\n', ', ') for t in tokens]
 tokens = str(tokens)
 tokens_list = tokens.split(",")
+
+tokens_list
 
 items = pd.DataFrame(tokens_list)
 
