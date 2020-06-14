@@ -5,8 +5,6 @@ from nltk.tokenize import sent_tokenize
 from nltk import Text
 import shutil
 
-
-
 path = r"pdf-sample.pdf"
 doc = fitz.open(path)
 print ("number of pages: %i" % doc.pageCount)
