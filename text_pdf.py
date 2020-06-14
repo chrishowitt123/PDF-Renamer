@@ -21,7 +21,9 @@ tokens = [t.replace('\n', ', ') for t in tokens]
 tokens = str(tokens)
 tokens_list = tokens.split(",")
 
-
-
 tokens_list = [t.strip() for t in tokens_list]
 
+Company = tokens_list[6]
+Ent_num = tokens_list[5]
+
+Company + '_' + Ent_num + '.pdf'
