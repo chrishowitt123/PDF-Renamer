@@ -31,15 +31,6 @@ items.columns = ['Info']
 Company_name = items.loc[6]
 Responsible = items.loc[19]
 
-Company_name = str(Company_name).replace('\nName:', '').replace('Info     ', '').replace(' 6', '').replace(', ', '')
-Responsible = str(Responsible).replace('\nName:', '').replace('Info     ', '').replace(' 19', '').replace(', ', '')
-Company_name + Responsible
-
-items.columns = ['Info']
-
-Company_name = items.loc[6]
-Responsible = items.loc[19]
-
-Company_name = str(Company_name).replace('\nName:', '')
-Responsible = str(Responsible).replace('\nName:', '')
-Company_name + Responsible
+#Company_name = str(Company_name).replace('\nName:', '').replace('Info     ', '').replace(' 6', '').replace(', ', '')
+#Responsible = str(Responsible).replace('\nName:', '').replace('Info     ', '').replace(' 19', '').replace(', ', '')
+#Company_name + Responsible
