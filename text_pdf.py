@@ -24,12 +24,8 @@ tokens_list = tokens.split(",")
 
 tokens_list
 
-items = pd.DataFrame(tokens_list)
 
-items.columns = ['Info']
 
-Company_name = items.loc[6]
-Responsible = items.loc[19]
 
 #Company_name = str(Company_name).replace('\nName:', '').replace('Info     ', '').replace(' 6', '').replace(', ', '')
 #Responsible = str(Responsible).replace('\nName:', '').replace('Info     ', '').replace(' 19', '').replace(', ', '')
