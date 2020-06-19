@@ -8,7 +8,7 @@ import shutil
 import datetime as dt
 
 
-path = r'C:\Users\chris\Desktop\pdf' #input('\nPaste the location of the files you wish to rename: ')
+path = input('\nPaste the path of the PDFs you wish to rename: ')
 path = path + '\*.pdf'
 
 files = []
@@ -19,8 +19,9 @@ for file in glob.glob(path):
 for file in files:
     
     doc = fitz.open(file)
-    print ("number of pages: %i" % doc.pageCount)
+    print ("\nnumber of pages: %i" % doc.pageCount)
     print(doc.metadata)
+    print('\n')
 
     page = doc.loadPage(0)
     pagetext = page.getText("text")
@@ -34,18 +35,20 @@ for file in files:
 
     tokens_list = [t.strip() for t in tokens_list]
 
-    for t, value in enumerate(tokens_list, 1):
-        print(t, value)
+    for t, value in enumerate(tokens_list, 0):
+        print(t, value)  
 
-    date_today = dt.date.today().strftime('%Y-%m-%d')
+cn = input('\nType the number next to company name: ')
+cid = input('\nType the number next to company ID: ')
+
+
+for file in files:
     
-#company_name_index = tokens_list.index('Holísticos – Serviços')
-#company_id_index = tokens_list.index('Código')
+    company_name = tokens_list[int(cn)]
+    company_id = tokens_list[int(cid)]
+    date_today = dt.date.today().strftime('%Y-%m-%d')
 
-    company_name = tokens_list[82]
-    company_id = tokens_list[22]
-
-    new_filename = date_today + '_' + company_name + '_' + company_id + '.pdf'
+    new_filename = date_today + '_' + company_name.title() + '_' + company_id + '.pdf'
 
 
     original = file
