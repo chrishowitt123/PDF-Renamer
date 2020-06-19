@@ -34,7 +34,8 @@ for file in files:
 
     tokens_list = [t.strip() for t in tokens_list]
 
-    tokens_list
+    for t, value in enumerate(tokens_list, 1):
+        print(t, value)
 
     date_today = dt.date.today().strftime('%Y-%m-%d')
     
