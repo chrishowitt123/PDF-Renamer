@@ -10,16 +10,15 @@ from os import listdir
 from os.path import isfile, join
 from pathlib import Path
 
-
 path = input('\nPaste the path of the PDFs you wish to rename: ') + '\\'
 path1 = path + '*.pdf'
 
 files = []
 
-
 for file in glob.glob(path1):
     files.append(file)
   
+
 list_of_dict = []
 list_of_dict = [{} for i in range(0, len(files))]
 
@@ -55,21 +54,16 @@ for file in files:
     b += +1 
     
 
-        
-
 cn = input('\nType the number next to company name: ')
 cid = input('\nType the number next to company ID: ')    
-
 
 company_name = []
 company_id = []
 date_today = [dt.date.today().strftime('%Y-%m-%d')]
 
-
 for dic in list_of_dict:
     company_name.append(dic[int(cn)])
     company_id.append(dic[int(cid)])
-    
 
 df = pd.DataFrame(list(zip(company_name, company_id, files)),
               columns=['company_name','company_id', 'old_file_names'])
@@ -83,7 +77,6 @@ df['new_file_names'] = df['date'] + '_'  + df['company_name'] + '_' + df['compan
 old_file_names = list(df['old_file_names'])
 
 new_file_names = list(df['new_file_names'])
-
 
 for o, n in zip(old_file_names, new_file_names):
     shutil.copyfile(o, n)  
