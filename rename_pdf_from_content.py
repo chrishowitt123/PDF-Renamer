@@ -10,6 +10,7 @@ from os import listdir
 from os.path import isfile, join
 from pathlib import Path
 
+" This program alows 
 
 path = input('\nPaste the path of the PDFs you wish to rename: ') + '\\'
 path1 = path + '*.pdf'
