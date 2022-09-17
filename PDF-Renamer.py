@@ -59,7 +59,6 @@ for file in files:
 for dic in list_of_dict: 
     for k, v in dic.items():
         print(k, ' : ', v)
-        
     
 # select file name sections by number
 cn = input('\nType the number next to company name: ') 
@@ -73,7 +72,6 @@ date_today = [dt.date.today().strftime('%Y-%m-%d')]
 for dic in list_of_dict: 
     company_name.append(dic[int(cn)])
     company_id.append(dic[int(cid)])
-    
 
 # create new file names
 df = pd.DataFrame(list(zip(company_name, company_id, files)), 
@@ -85,7 +83,6 @@ df['new_file_names'] = df['date'] + '_'  + df['company_name'] + '_' + df['compan
 
 old_file_names = list(df['old_file_names'])
 new_file_names = list(df['new_file_names'])
-
 
 # copy original files and rename copies as per user definitions
 for o, n in zip(old_file_names, new_file_names): 
